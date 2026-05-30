@@ -1,0 +1,165 @@
+/* ═══════════════════════════════════════════════════════════════
+   Activities Section Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+.activities-section {
+  padding: 100px 0;
+  background: var(--color-warm-white);
+  position: relative;
+}
+
+.activities-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.activity-card {
+  background: var(--color-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-top: 4px solid var(--color-primary-orange);
+}
+
+.activity-card:nth-child(even) {
+  border-top-color: var(--color-dark-gold);
+}
+
+.activity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(139, 105, 20, 0.15);
+}
+
+.activity-icon-wrapper {
+  height: 200px;
+  background: linear-gradient(135deg, var(--color-light-peach), var(--color-warm-white));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.activity-icon-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 30px;
+  width: 40px;
+  height: 40px;
+  background: var(--color-white);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.activity-icon {
+  font-size: 5rem;
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 10px rgba(245, 166, 35, 0.2));
+  transition: transform 0.5s ease;
+}
+
+.activity-card:hover .activity-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.activity-image-wrapper {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.activity-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.activity-card:hover .activity-image-wrapper img {
+  transform: scale(1.08);
+}
+
+.activity-content {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: var(--color-dark-text);
+  line-height: 1.4;
+}
+
+.activity-content p {
+  color: var(--color-body-text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ── Disaster Relief Full Width Card ──────────────────────── */
+.disaster-relief {
+  border-top: none;
+  background: linear-gradient(135deg, var(--color-primary-orange), var(--color-burnt-orange));
+  color: var(--color-white);
+  text-align: center;
+}
+
+.disaster-relief:hover {
+  box-shadow: 0 20px 40px rgba(209, 122, 10, 0.4);
+}
+
+.activity-content-full {
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.disaster-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+.disaster-relief h3 {
+  color: var(--color-white);
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.disaster-relief p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  font-size: 1.1rem;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .activities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .disaster-relief {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .activities-grid {
+    gap: 40px;
+  }
+}

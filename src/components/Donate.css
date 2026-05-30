@@ -1,0 +1,255 @@
+/* ═══════════════════════════════════════════════════════════════
+   Donate Section Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+.donate-section {
+  background: var(--color-warm-white);
+  padding-bottom: 80px;
+}
+
+/* ── Donate Hero ───────────────────────────────────────────── */
+.donate-hero {
+  padding: 100px 0 60px;
+  background: linear-gradient(180deg, var(--color-light-peach) 0%, var(--color-warm-white) 100%);
+  text-align: center;
+}
+
+.donate-header {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.donate-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin: 16px 0;
+  line-height: 1.2;
+}
+
+.donate-title span {
+  background: linear-gradient(135deg, var(--color-primary-orange), var(--color-burnt-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.donate-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--color-dark-gold);
+  font-style: italic;
+}
+
+/* ── Donate Story ──────────────────────────────────────────── */
+.donate-story {
+  padding: 40px 0 80px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.story-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-body-text);
+}
+
+.story-content p {
+  margin-bottom: 20px;
+}
+
+.emotional-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--color-dark-gold);
+  border-left: 4px solid var(--color-primary-orange);
+  padding: 16px 24px;
+  margin-bottom: 30px;
+  background: var(--color-cream);
+  border-radius: 0 12px 12px 0;
+}
+
+.emotional-highlight {
+  font-weight: 700;
+  color: var(--color-burnt-orange);
+  font-size: 1.15rem;
+  margin: 30px 0;
+}
+
+.story-image {
+  position: relative;
+}
+
+.story-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px var(--color-card-shadow);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  background: var(--color-white);
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-dark-gold);
+  max-width: 80%;
+}
+
+/* ── Donate Services ───────────────────────────────────────── */
+.donate-services {
+  padding: 60px 0;
+  background: var(--color-cream);
+}
+
+.services-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: var(--color-dark-text);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--color-white);
+  padding: 30px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--color-primary-orange);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(245, 166, 35, 0.15);
+}
+
+.service-number {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--color-overlay-light);
+  line-height: 1;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card p {
+  color: var(--color-muted-text);
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Donate CTA ────────────────────────────────────────────── */
+.donate-cta-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.hindi-callout {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--color-burnt-orange);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.btn-donate-huge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, var(--color-primary-orange), var(--color-burnt-orange));
+  color: var(--color-white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 20px 60px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(245, 166, 35, 0.4);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: pulse 2s infinite;
+}
+
+.btn-donate-huge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(245, 166, 35, 0.6);
+  animation: none;
+}
+
+.tax-exemption {
+  margin-top: 24px !important;
+  font-size: 0.85rem !important;
+  color: var(--color-muted-text);
+  font-style: italic;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .story-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
