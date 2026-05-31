@@ -64,9 +64,14 @@
   height: 40px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  font-size: 0.8rem;
-  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
   transition: all 0.3s ease;
+}
+
+.social-links a svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 .social-links a:hover {
