@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import heroImg from '../assets/hero.png'
 import missionMaaImg from '../assets/mission_maa.png'
+import Activities from './Activities'
 import './Home.css'
 import './Donate.css'
 
@@ -130,6 +131,8 @@ function Home() {
           </div>
         </div>
       </div>
+
+      <Activities />
 
       {/* ── Mission Maa ─────────────────────────────────────── */}
       <div id="mission-maa" className="mission-maa-section donate-section">
