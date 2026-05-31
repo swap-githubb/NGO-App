@@ -1,5 +1,14 @@
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo.jpeg'
 import './Footer.css'
+
+const FOOTER_LINKS = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About Us' },
+  { to: '/activities', label: 'Our Activities' },
+  { to: '/gallery', label: 'Gallery' },
+  { to: '/donate', label: 'Donate' },
+]
 
 function Footer() {
   return (
@@ -18,59 +27,37 @@ function Footer() {
             <p className="footer-tagline">
               Empowering Lives, Enriching Communities. Working relentlessly to build a self-reliant nation.
             </p>
-            {/* <div className="social-links">
-              <a href="#" aria-label="Facebook">FB</a>
-              <a href="#" aria-label="Twitter">TW</a>
-              <a href="#" aria-label="Instagram">IG</a>
-              <a href="#" aria-label="LinkedIn">IN</a>
-            </div> */}
           </div>
 
           <div className="footer-links-col">
             <h5>Quick Links</h5>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#activities">Our Activities</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#donate">Donate</a></li>
+              {FOOTER_LINKS.map(({ to, label }) => (
+                <li key={to}>
+                  <Link to={to}>{label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
-
-          {/* <div className="footer-links-col">
-            <h5>Legal</h5>
-            <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Financial Reports</a></li>
-              <li><a href="#">80G Certificate</a></li>
-            </ul>
-          </div> */}
 
           <div className="footer-contact-col">
             <h5>Contact Us</h5>
             <ul className="contact-info">
               <li>
                 <span className="contact-icon">📍</span>
-                <span>154, 1st Floor, Maharaja kameshwar complex, Frazer Road, Patna Bihar</span>
+                <span>154, 1st Floor, Maharaja Kameshwar Complex, Frazer Road, Patna, Bihar-800001</span>
               </li>
               <li>
                 <span className="contact-icon">📞</span>
-                <span><li>+91 7717786838</li><li>+91 7258866055</li></span>
+                <span> <li>+91 7717786838</li>
+                  <li>+91 7258866055</li>
+                </span>
               </li>
               <li>
                 <span className="contact-icon">✉️</span>
                 <span>contact@nextriseindia.org</span>
               </li>
             </ul>
-            
-            {/* <div className="newsletter">
-              <h6>Subscribe to updates</h6>
-              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" placeholder="Your email address" required />
-                <button type="submit">→</button>
-              </form>
-            </div> */}
           </div>
 
         </div>

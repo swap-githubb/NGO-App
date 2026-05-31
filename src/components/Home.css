@@ -137,6 +137,10 @@
   transform: translateY(-2px);
 }
 
+.hero-buttons a {
+  text-decoration: none;
+}
+
 /* ── Stats Bar ─────────────────────────────────────────────── */
 .stats-bar {
   position: absolute;
@@ -336,3 +340,5 @@
     padding: 36px 24px;
   }
 }
+
+/* Mission Maa block (styles in Donate.css) */

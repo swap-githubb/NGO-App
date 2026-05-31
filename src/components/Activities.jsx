@@ -1,8 +1,8 @@
 import './Activities.css'
-import activityNutritionImg from '../assets/activity_nutrition.png'
-import activityHealthImg from '../assets/activity_health.png'
+import activityNutritionImg from '../assets/activity_nutrition.jpeg'
+import activityHealthImg from '../assets/activity_health.jpeg'
 import activityVocationalImg from '../assets/activity_vocational.png'
-import activityEducationImg from '../assets/activity_education.png'
+import activityEducationImg from '../assets/activity_education.jpeg'
 
 function Activities() {
   return (

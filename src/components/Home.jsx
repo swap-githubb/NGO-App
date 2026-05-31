@@ -1,17 +1,10 @@
+import { Link } from 'react-router-dom'
 import heroImg from '../assets/hero.png'
+import missionMaaImg from '../assets/mission_maa.png'
 import './Home.css'
+import './Donate.css'
 
 function Home() {
-  const scrollToDonate = (e) => {
-    e.preventDefault()
-    document.getElementById('donate')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const scrollToAbout = (e) => {
-    e.preventDefault()
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <section id="home">
       {/* ── Hero ────────────────────────────────────────────── */}
@@ -33,12 +26,12 @@ function Home() {
             that address the immediate and long-term needs of India's most vulnerable populations.
           </p>
           <div className="hero-buttons">
-            <a href="#donate" className="btn-primary" onClick={scrollToDonate}>
+            <Link to="/donate" className="btn-primary">
               ❤️ Donate Now
-            </a>
-            <a href="#about" className="btn-outline-light" onClick={scrollToAbout}>
+            </Link>
+            <Link to="/about" className="btn-outline-light">
               Learn More →
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -133,6 +126,71 @@ function Home() {
                 literacy, and skill development programs that enable individuals to break
                 the cycle of poverty.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Mission Maa ─────────────────────────────────────── */}
+      <div id="mission-maa" className="mission-maa-section donate-section">
+        <div className="donate-hero">
+          <div className="container">
+            <div className="donate-header animate-on-scroll">
+              <span className="section-label">Our Urgent Campaign</span>
+              <h2 className="donate-title">
+                Join <span>Mission Maa</span>
+              </h2>
+              <p className="donate-subtitle">
+                Restoring Dignity to Abandoned and Abused Mothers
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="donate-story">
+          <div className="container">
+            <div className="story-grid">
+              <div className="story-content animate-on-scroll delay-1">
+                <blockquote className="emotional-quote">
+                  "A society can never be happy or truly prosper if its mothers are left to cry in dark corners."
+                </blockquote>
+                <p>
+                  At Nextrise India Foundation, we firmly believe that <strong>Matra Shakti</strong> (Mother Power) is the foundation of humanity. But today, a painful reality stares us in the face. Countless mothers across our nation are living a life of absolute <em>lachari</em> (helplessness).
+                </p>
+                <p>
+                  These are mothers who spent their entire lives sacrificing everything to raise their children, only to be brutally thrown out of their own homes in their old age. These are single mothers shattered by extreme poverty, and women surviving the horrific trauma of domestic violence and abuse. Today, they are wandering on the streets—starving, broken, and completely abandoned.
+                </p>
+                <p className="emotional-highlight">
+                  How can we stay silent when the creators of our lives are forced to sleep on an empty stomach?
+                </p>
+                <p>
+                  To fight this injustice, we have launched <strong>'Mission Maa'</strong>. Our mission is to reach out directly to these forgotten mothers and wrap them in a blanket of security, respect, and love.
+                </p>
+              </div>
+              <div className="story-image animate-on-scroll delay-2">
+                <img src={missionMaaImg} alt="Elderly mother cared for by volunteers" />
+                <div className="image-caption">
+                  They protected us when we were helpless. Now, it is our turn to protect them.
+                </div>
+              </div>
+            </div>
+
+            <div className="mission-maa-cta animate-on-scroll delay-3">
+              <div className="mission-maa-cta-text">
+                {/* <p className="hindi-callout">Matra maa ke samman aur unke adhikaar ke liye aage aaiye.</p> */}
+                <p className="mission-maa-cta-desc">
+                  Your donation can give a forgotten mother food, shelter, and dignity. A mother is waiting for your help today.
+                </p>
+                <p className="tax-exemption">All donations are 50% tax-exempt under Section 80G.</p>
+              </div>
+              <a
+                href="https://razorpay.me/@nextriseindiafoundation"
+                className="btn-donate-mission"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="heart-icon">❤️</span> Donate Now
+              </a>
             </div>
           </div>
         </div>

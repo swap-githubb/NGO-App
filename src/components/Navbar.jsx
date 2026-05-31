@@ -1,93 +1,56 @@
 import { useState, useEffect } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/logo.jpeg'
 import './Navbar.css'
+
+const NAV_ITEMS = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/about', label: 'About Us' },
+  { to: '/activities', label: 'Our Activities' },
+  { to: '/gallery', label: 'Gallery' },
+]
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-
-      // Determine active section
-      const sections = ['home', 'about', 'activities', 'gallery', 'donate']
-      for (const id of sections.reverse()) {
-        const el = document.getElementById(id)
-        if (el && el.getBoundingClientRect().top <= 120) {
-          setActiveSection(id)
-          break
-        }
-      }
-    }
+    const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleNavClick = (e, sectionId) => {
-    e.preventDefault()
-    setMenuOpen(false)
-    const el = document.getElementById(sectionId)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
+  const closeMenu = () => setMenuOpen(false)
+
+  const navLinkClass = ({ isActive }) => (isActive ? 'active' : '')
 
   return (
     <nav className={`navbar${isScrolled ? ' scrolled' : ''}`} id="navbar">
       <div className="container navbar-inner">
-        <a href="#home" className="navbar-logo" onClick={(e) => handleNavClick(e, 'home')}>
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
           <img src={logo} alt="Nextrise India Foundation" />
           <div className="navbar-logo-text">
             <span className="brand-name">Nextrise India</span>
             <span className="brand-sub">Foundation</span>
           </div>
-        </a>
+        </Link>
 
         <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
+          {NAV_ITEMS.map(({ to, label, end }) => (
+            <li key={to}>
+              <NavLink to={to} end={end} className={navLinkClass} onClick={closeMenu}>
+                {label}
+              </NavLink>
+            </li>
+          ))}
           <li>
-            <a
-              href="#home"
-              className={activeSection === 'home' ? 'active' : ''}
-              onClick={(e) => handleNavClick(e, 'home')}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#about"
-              className={activeSection === 'about' ? 'active' : ''}
-              onClick={(e) => handleNavClick(e, 'about')}
-            >
-              About Us
-            </a>
-          </li>
-          <li>
-            <a
-              href="#activities"
-              className={activeSection === 'activities' ? 'active' : ''}
-              onClick={(e) => handleNavClick(e, 'activities')}
-            >
-              Our Activities
-            </a>
-          </li>
-          <li>
-            <a
-              href="#gallery"
-              className={activeSection === 'gallery' ? 'active' : ''}
-              onClick={(e) => handleNavClick(e, 'gallery')}
-            >
-              Gallery
-            </a>
-          </li>
-          <li>
-            <a
-              href="#donate"
-              className={`donate-btn${activeSection === 'donate' ? ' active' : ''}`}
-              onClick={(e) => handleNavClick(e, 'donate')}
+            <NavLink
+              to="/donate"
+              className={({ isActive }) => `donate-btn${isActive ? ' active' : ''}`}
+              onClick={closeMenu}
             >
               ❤️ Donate
-            </a>
+            </NavLink>
           </li>
         </ul>
 
